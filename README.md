@@ -3,7 +3,8 @@ The code wiil let you delete not used Tekton pipelinerun CRD kubernetes objects 
 ## Usage
  - just to list Tekton pipelineruns:
 ```
-docker run -it --rm -it -v ~/.kube/config:/config:ro --network host tkn:0.1 pipelinerun list --kubeconfig /config -n <the_NS-with_yourpipelineruns> 
+docker build -t <your_local_tag> .
+docker run -it --rm -it -v ~/.kube/config:/config:ro --network host <your_local_tag> pipelinerun list --kubeconfig /config -n <the_NS-with_yourpipelineruns> 
 ```
  - to schedule a k8s cronjob that will automatically run and deleten the Tekton pipelinerun objects:
 
