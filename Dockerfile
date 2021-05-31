@@ -5,5 +5,6 @@ RUN curl -LO https://github.com/tektoncd/cli/releases/download/v0.18.0/tkn_0.18.
 FROM ubuntu:18.04
 COPY --from=posrednik /usr/local/bin/tkn /usr/local/bin/
 COPY tkn_cleanup.sh /tkn_cleanup.sh
+USER 1000
 ENTRYPOINT ["/tkn_cleanup.sh"]
 CMD ["-c"]
